@@ -2,7 +2,7 @@
 
 # Documentacion para git
 
-git add -> Agrega todo los archivos al stage (cubeta) de git
+git add . -> Agrega todo los archivos al stage (cubeta) de git
 
 git commit -> Agrega una marca en el tiempo a estos cambios que se han
                 agregado en el stage (cubeta)

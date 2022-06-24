@@ -1,0 +1,30 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "git add . -> Agrega todo los archivos al stage (cubeta) de git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build-client",
+    "start": "npm run start-server",
+    "build-client": "npm run build --prefix=client",
+    "start-server": "npm start --prefix=server",
+    "dev-server": "env-cmd -f server.env npm run dev --prefix=server",
+    "dev-client": "env-cmd -f client.env npm start --prefix=client",
+    "dev": "concurrently \"npm:dev-*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tagonio/proyecto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tagonio/proyecto/issues"
+  },
+  "homepage": "https://github.com/tagonio/proyecto#readme",
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "env-cmd": "^10.1.0"
+  }
+}

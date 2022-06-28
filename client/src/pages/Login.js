@@ -43,7 +43,8 @@ function Login() {
             .catch((error) => {
                 console.log(error);
                 setHasErrorLogin(true);
-                setErrorMessageLogin(error);
+                //setErrorMessageLogin(error);
+                setErrorMessageLogin(<span>An error has ocurred in the login</span>);                
                 toast.error("An error has ocurred in the login");
             })
     }

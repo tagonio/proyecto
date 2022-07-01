@@ -8,6 +8,10 @@ import { getPokemons } from "../../services/api";
 import { changeAvatarAndImage, changeEmail, changeName, changePassword } from "./actions";
 import { reducerFunction } from "./reducer";
 import styles from "./styles.module.css";
+import { toast } from 'react-hot-toast';
+import { handleRegister } from '../../services/authorization';
+
+
 
 /*
 
@@ -56,7 +60,25 @@ function Register() {
     const { name, email, password, avatar, image } = registerState;
 
     const handleSubmit = (event) => {
-        console.log(event);
+        event.preventDefault();
+
+        const data = {
+            name,
+            email,
+            password,
+            avatar,
+            image
+        };
+
+        handleRegister(data)
+            .then((response) => {
+                toast.success("User registered successfully");
+            })
+            .catch((error) => {
+                console.log(error);
+                toast.error("An error has ocurred in the register");
+            })
+
     }
 
     const handleChangeEmail = (event) => {

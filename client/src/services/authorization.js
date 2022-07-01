@@ -31,6 +31,27 @@ export const handleLogin = async (email, password) => {
     return jsonData.message;
 }
 
+export const handleRegister = async (userData) => {
+
+    const response = await fetch(API_AUTH_URL + "/register", {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
+
+    const jsonData = await response.json();
+
+    console.log(jsonData);
+
+    if (jsonData.error)
+        throw jsonData.error;
+
+    return jsonData.message;
+}
+
 export const saveToken = (token)=>{
     localStorage.setItem('token',token);
 }

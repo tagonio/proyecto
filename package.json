@@ -4,14 +4,16 @@
   "description": "git add . -> Agrega todo los archivos al stage (cubeta) de git",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build-client",
+    "build": "npm run install-all && npm run build-client",
     "start": "npm run start-server",
+    "dev": "concurrently \"npm:dev-*\"",
     "build-client": "npm run build --prefix=client",
     "start-server": "npm start --prefix=server",
     "dev-server": "env-cmd -f server.env npm run dev --prefix=server",
     "dev-client": "env-cmd -f client.env npm start --prefix=client",
-    "dev": "concurrently \"npm:dev-*\""
+    "install-all": "npm run install-server && npm run install-client",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install"
   },
   "repository": {
     "type": "git",

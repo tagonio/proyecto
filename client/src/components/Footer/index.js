@@ -10,7 +10,7 @@ function Footer() {
                 minHeight: "5vh",
                 textAlign: "center"
             }}>
-                <h4>Hecho por Jhoan</h4>
+                <h4>UTN.BA FULL STACK DEVELOPER</h4>
             </AppBar>
         </Box>
     );
